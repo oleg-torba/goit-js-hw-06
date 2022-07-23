@@ -17,7 +17,8 @@ const imagesList = document.querySelector(".gallery");
 
 const imagesAdd = images
 .map((element) => `<li><img src='${element.url}' alt='${element.alt}'></li>`)
-.join("")
+.join("");
+
 
 
 console.log(imagesAdd)
