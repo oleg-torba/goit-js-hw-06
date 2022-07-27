@@ -2,9 +2,13 @@ const validation = document.querySelector("#validation-input");
 const validationConfirm = validation.getAttribute("data-length");
 
 
-function onInputValid(event) {
-    if(event.target.value.length === Number(validationConfirm)){
-        input.classList.remove("invalid");
-        input.classList.add("valid")
+const onValidationBlur = (event) => {
+    if(validation.value > validationConfirm.length){
+        validation.classList.add("valid")
     }
+    else {
+        validation.classList.add("invalid")
+    }
+    validation.addEventListener("blur", event)
 }
+console.log(onValidationBlur)
