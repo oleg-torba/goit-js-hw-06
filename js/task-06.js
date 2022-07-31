@@ -1,11 +1,10 @@
-const validation = document.querySelector("#validation-input");
-const validationConfirm = validation.getAttribute("data-length");
+const validation = document.querySelector(`#validation-input`);
+const getTargetLength = Number(validation.getAttribute("data-length"));
 
-function onValidationBlur(event) {
-  this.classList.add("invalid");
-  if (event.target.value.length > Number(validationConfirm)) {
-    this.classList.remove("invalid");
-    this.classList.add("valid");
+validation.addEventListener(`blur`, function () {
+  if (validation.value.length === getTargetLength) {
+    validation.classList.add(`valid`);
+  } else {
+    validation.classList.add(`invalid`);
   }
-}
-validation.addEventListener("blur", onValidationBlur);
+});
